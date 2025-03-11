@@ -24,7 +24,6 @@ begin
    process
    begin
       e_bp <= '1';
-      wait for 50 ns;
       i_bp <= "00";
       wait for 50 ns;
       i_bp <= "01";
@@ -34,7 +33,6 @@ begin
       i_bp <= "11";
       wait for 50 ns;
       e_bp <= '0';
-      wait for 50 ns;
       i_bp <= "00";
       wait for 50 ns;
       i_bp <= "01";
