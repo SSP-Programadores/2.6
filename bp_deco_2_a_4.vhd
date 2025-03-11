@@ -20,13 +20,31 @@ begin
    uut: component deco_2_a_4 port map
          (i => i_bp, d => d_bp, e => e_bp);
 
-   for indice in 0 to 1 generate
-      e_bp <= indice after 5 ns;
-      i_bp <= "00" after 5 ns;
-      i_bp <= "01" after 5 ns;
-      i_bp <= "10" after 5 ns;
-      i_bp <= "11" after 5 ns;
-   end generate;         
+   -- bucle para enable = 0, enable = 1
+   process
+   begin
+      e_bp <= '1';
+      wait for 50 ns;
+      i_bp <= "00";
+      wait for 50 ns;
+      i_bp <= "01";
+      wait for 50 ns;
+      i_bp <= "10";
+      wait for 50 ns;
+      i_bp <= "11";
+      wait for 50 ns;
+      e_bp <= '0';
+      wait for 50 ns;
+      i_bp <= "00";
+      wait for 50 ns;
+      i_bp <= "01";
+      wait for 50 ns;
+      i_bp <= "10";
+      wait for 50 ns;
+      i_bp <= "11";
+      wait;
+   end process;
+            
 
 end architecture bp_deco_2_4; 
 
